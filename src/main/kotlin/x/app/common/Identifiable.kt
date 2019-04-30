@@ -1,7 +1,7 @@
 package x.app.common
 
 import com.fasterxml.jackson.annotation.JsonIgnore
-import org.axonframework.commandhandling.TargetAggregateIdentifier
+import org.axonframework.modelling.command.TargetAggregateIdentifier
 
 /**
  *   @Project: base
@@ -9,7 +9,7 @@ import org.axonframework.commandhandling.TargetAggregateIdentifier
  *   @Author:  Iamee
  *   @Date:    2019-04-27 23:09
  */
-interface Identifier {
+interface Identifiable {
 
     @JsonIgnore
     @TargetAggregateIdentifier
