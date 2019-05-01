@@ -1,7 +1,5 @@
 package x.app.common
 
-import org.axonframework.commandhandling.gateway.CommandGateway
-
 /**
  *   @Project: base
  *   @Package: x.app.common
@@ -16,5 +14,3 @@ abstract class AbstractCommand<T : AbstractResult> : Identifiable {
     }
 
 }
-
-infix fun <T : AbstractResult> AbstractCommand<T>.sendTo(commandGateway: CommandGateway): T = this.covert(commandGateway.sendAndWait(this))
