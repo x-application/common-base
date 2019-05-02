@@ -12,8 +12,12 @@ class ExceptionResult : AbstractResult {
 
     constructor()
 
-    constructor(exception: AbstractException) {
-        this.exception = exception
+    constructor(cause: Throwable) {
+        if (cause is AbstractException) {
+            this.exception = cause
+        } else {
+            this.exception = UnCatchException(cause)
+        }
     }
 
 }
